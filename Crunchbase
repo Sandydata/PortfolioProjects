@@ -1,3 +1,29 @@
+Project Scope: Crunchbase Data Cleaning with SQL 
+
+Background
+Crunchbase is a leading platform for discovering innovative companies and the people behind them. The Crunchbase dataset contains information on companies, investors, funding rounds, and more. However, the dataset may contain errors or inconsistencies that need to be cleaned up before it can be used for analysis or modeling.
+
+Objective
+The objective of this project is to clean and prepare the Crunchbase dataset for analysis using SQL. The project will involve identifying and addressing data quality issues, such as missing or incorrect values, duplicates, and outliers.
+
+Tasks
+The project will include the following tasks:
+Data Loading: Load the Crunchbase dataset into a SQL database.
+Data Exploration: Explore the dataset using SQL queries to identify data quality issues, such as missing or incorrect values, duplicates, and outliers.
+Data Cleaning: Clean the dataset using SQL statements to address data quality issues, such as filling in missing values, correcting incorrect values, removing duplicates, and identifying and handling outliers.
+Data Integration: Integrate multiple data sources if needed, and ensure data consistency and accuracy across all tables.
+Data Validation: Validate the cleaned dataset using SQL queries to ensure that it is consistent, accurate, and complete.
+
+Deliverables
+The project deliverables will include the following:
+
+A clean and validated Crunchbase dataset stored in a SQL database.
+A report documenting the data cleaning process, including a description of the data quality issues identified, the SQL statements used to address these issues, and the resulting data quality improvements.
+A set of SQL queries for exploring and validating the cleaned dataset.
+
+Constraints
+The project must be completed using SQL, and any tools or software used must be open source or otherwise freely available. The project must also adhere to data privacy and security regulations, and ensure the confidentiality and integrity of any sensitive or personal data.
+
 -- DELETE the row If raised_amount_usd is empty (NULL)
 
 DELETE FROM tutorial.crunchbase_investments
