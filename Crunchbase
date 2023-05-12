@@ -1,1 +1,31 @@
+-- DELETE the row If raised_amount_usd is empty (NULL)
+
+DELETE FROM tutorial.crunchbase_investments
+WHERE raised_amount_usd IS NULL;
+
+-- Using Common Table Expression (CTE) to visualize data easier and clean up duplicates in the table
+-- COALESCE Function is used for cleaning up duplicates in this case
+-- ROW_NUMBER() function is used to assign a unique row number to each row within each id group, 
+-- and the WHERE RN = 1 condition is used to select only the first row in each group.
+(
+WITH cte1 AS 
+(
+SELECT 
+  company_name, 
+  funded_year, 
+  company_region,
+  COALESCE(company_country_code, 'Unknown') AS country_code,
+  COALESCE(company_city, 'Unknown') AS company_city, 
+  COALESCE(raised_amount_usd, 'Unknown') AS raised_amount,
+  COALESCE(company_state_code, 'Unknown') AS state_code,
+  ROW_NUMBER() Over(PARTITION BY id ORDER BY id) AS RN
+FROM tutorial.crunchbase_investments
+)
+
+SELECT *
+FROM cte1
+WHERE RN = 1
+
+ORDER BY raised_amount_usd DESC
+)
 
